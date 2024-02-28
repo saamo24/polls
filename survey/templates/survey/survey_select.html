@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Survey</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'survey/style.css' %}">
+</head>
+<body>
+    <div class="container">
+    <h1>Select Survey</h1>
+    <ul>
+        {% for survey in latest_survey_list %}
+            <li><a href="{% url 'survey:question_list' survey.id %}", class="button">{{ survey.survey_name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h4>If you want to create your own questions, please <a href="mailto:admin@example.com?subject=For%20Creating%20Questions">contact</a> the admin.</h4>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Questions</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'survey/style.css' %}">
+</head>
+<body>
+    <h1>Survey Questions - {{ survey.survey_name }}</h1>
+    <form method="post" action="{% url 'survey:vote' survey.id %}">
+        {% csrf_token %}
+        <ul>
+            {% for question in survey.question_set.all %}
+                <li>
+                    <p>{{ question.question_text }}</p>
+                    {% for choice in question.choice_set.all %}
+                        <input type="radio" id="choice{{ choice.id }}" name="question{{ question.id }}" value="{{ choice.id }}">
+                        <label for="choice{{ choice.id }}">{{ choice.choice_text }}</label><br>
+                    {% endfor %}
+                </li>
+            {% endfor %}
+        </ul>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h4>If you want to create your own questions, please <a href="mailto:admin@example.com?subject=For%20Creating%20Questions">contact</a> the admin.</h4>
+</body>
+</html>
