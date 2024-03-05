@@ -1,48 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Our Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 100px auto;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'welcome/style.css' %}">
 </head>
 <body>
     <div class="container">
         <h1>Welcome to Our Website</h1>
-        <p>This is a website about social surveys. You can pass the survey by clicking the button below.</p>
+        <p class="high">This is a website about social surveys. You can pass the survey by clicking the button below. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quisquam est praesentium incidunt quis ea facere numquam aspernatur soluta. Hic. </p>
         <p>Feel free to explore our website!</p>
         <a href="/survey" class="btn">Take the Survey</a>
-        <h4>If you have a questions, please <a href="mailto:admin@example.com?subject=For%20Creating%20Questions">contact</a> the administrator.</h4>
+        <h4>If you have any questions, please <a class="down" href="mailto:admin@example.com?subject=For%20Creating%20Questions">contact</a> the administrator.</h4>
     </div>
-    </body>
+</body>
 </html>

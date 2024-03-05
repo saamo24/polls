@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url(../../static/survey/images/back.jpeg) no-repeat;
+    background-size: cover;
+    color: #fff;
+    font-size: large;
+}
+h1, h4{
+    text-align: center;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    border-radius: 14px;
+    z-index: 1111;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #7b6e6e;
+    margin: 25px;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: #609bf418;
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(96, 172, 244, 0.452);
+    opacity: 1;
+    filter: blur(12px);
+    animation: blob-bounce 5s infinite ease;
+}
+
+@keyframes blob-bounce {
+0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+}
+
+25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+}
+
+50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+}
+
+75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+}
+
+100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+}
+}
+
+li > a{
+    color: #fff;
+    
+}
+a{
+    color: #003153;
+}
+a:hover{
+    color: #00305379;
+}
+/* .btn {
+    display: inline-block;
+    background-color: #003153;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 20px;
+    border: none;
+    justify-content: center;
+    text-align: center;
+    /* width: auto; 
+
+} */
+.btn {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+}
+
+.btn input[type="submit"] {
+    /* Your button styles */
+    display: inline-block;
+    background-color: #003153;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 20px;
+    border: none;
+    justify-content: center;
+    text-align: center;
+}
+
+input:hover {
+    background-color: #003053a2;
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thanks!</title>
+    <title>Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,11 +61,19 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Thank You!!!</h1>
-
-        <a href="{% url 'survey:thank_you' %}"></a>
-        <a class="btn" href="{% url 'survey:index' %}">Back to questions</a>
-    </div>
+    <h2>Login</h2>
+    <form method="post" action="{% url 'user:login' %}">
+        {% csrf_token %}
+                <div>{{ error_message }}</div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
 </body>
 </html>

@@ -1,14 +1,14 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select Survey</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'survey/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'survey/detail.css' %}">
 </head>
 <body>
-    <div>
+    <div class="error_message">
     <form action="{% url 'survey:vote' survey.id %}" method="post">
         {% csrf_token %}
         <fieldset>
@@ -21,18 +21,9 @@
                 <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
             {% endfor %}
         </fieldset>
-        <input type="submit" value="Vote">
+        <!-- <div class="btn">
+            <input type="submit" value="Submit" class="btn">            
+        </div> -->
     </form>
     </div>
 </body>
-
-
-
-<!-- 
-<h1>{{ question.question_text }}</h1>
-
-<ul>
-    {% for choice in question.choice_set.all %}
-        <li>{{ choice.choice_text}}</li>
-    {% endfor %}
-</ul> -->

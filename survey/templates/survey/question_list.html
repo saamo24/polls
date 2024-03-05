@@ -6,10 +6,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Questions</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'survey/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'survey/questions.css' %}">
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url(../../static/survey/images/back.jpeg) no-repeat;
+            background-size: cover;
+            color: #fff;
+        }
+        h1, h4{
+            text-align: center;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            position: relative;
+            width: 80%;
+            height: 100%;
+            border-radius: 14px;
+            z-index: 1111;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+            margin: 25px;
+        }
+
+        .bg {
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background: #609bf418;
+            backdrop-filter: blur(24px);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blob {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: rgba(96, 172, 244, 0.452);
+            opacity: 1;
+            filter: blur(12px);
+            animation: blob-bounce 5s infinite ease;
+        }
+
+        @keyframes blob-bounce {
+        0% {
+            transform: translate(-100%, -100%) translate3d(0, 0, 0);
+        }
+
+        25% {
+            transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+        }
+
+        50% {
+            transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+        }
+
+        75% {
+            transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+        }
+
+        100% {
+            transform: translate(-100%, -100%) translate3d(0, 0, 0);
+        }
+        }
+
+        li > a{
+            color: #fff;
+            
+        }
+        a{
+            color: #003153;
+        }
+        a:hover{
+            color: #00305379;
+        }
+        input {
+            display: inline-block;
+            background-color: #003153;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px;
+            border: none;
+        }
+        input:hover {
+            background-color: #003053a2;
+        }
+    </style> -->
 </head>
 <body>
-    <h1>Survey Questions - {{ survey.survey_name }}</h1>
+    <h1>{{ survey.survey_name }}</h1>
     <form method="post" action="{% url 'survey:vote' survey.id %}">
         {% csrf_token %}
         <ul>
@@ -26,6 +132,6 @@
         <input type="submit" value="Submit">
     </form>
 
-    <h4>If you want to create your own questions, please <a href="mailto:admin@example.com?subject=For%20Creating%20Questions">contact</a> the admin.</h4>
+    <p>If you want to create your own questions, please <a href="mailto:samuelabrahamyan@gmail.com?subject=For%20Creating%20Questions">contact</a> the admin.</p>
 </body>
 </html>
